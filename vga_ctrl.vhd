@@ -35,7 +35,9 @@ entity vga_ctrl is
 Port ( 
 
 clk, en: in std_logic; 
-HS, VS, Vid: out std_logic 
+HS, VS, Vid: out std_logic;
+hcountt: out std_logic_vector (9 downto 0);
+vcountt: out std_logic_vector (9 downto 0)
 
 );
 end vga_ctrl;
@@ -126,6 +128,7 @@ begin
     
 end process; 
         
-        
+hcountt <= hcount;
+vcountt <= vcount; 
 
 end Behavioral;
